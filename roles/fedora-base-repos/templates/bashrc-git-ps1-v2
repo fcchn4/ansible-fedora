@@ -1,0 +1,65 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Colors for prompt
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[1;33m\]"
+GREEN="\[\033[0;32m\]"
+BLUE="\[\033[1;34m\]"
+LIGHT_RED="\[\033[1;31m\]"
+COLOR_NONE="\[\e[0m\]"
+
+# Symbol for prompt
+function set_prompt_symbol () {
+  if test $1 -eq 0 ; then
+      PROMPT_SYMBOL="\$"
+  else
+      PROMPT_SYMBOL="${LIGHT_RED}\$${COLOR_NONE}"
+  fi
+}
+
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+  fi
+}
+
+# Set the full bash prompt.
+function set_bash_prompt () {
+  set_prompt_symbol $?
+  set_virtualenv
+
+  ## Prompt Git custom on local user directory ~/bashrc
+  source /usr/share/git-core/contrib/completion/git-prompt.sh
+  export GIT_PS1_SHOWCOLORHINTS=true
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+  # Set the bash prompt variable.
+  #export PS1="${PYTHON_VIRTUALENV}${YELLOW}\t${COLOR_NONE}:${RED}[\W]${COLOR_NONE}$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")${PROMPT_SYMBOL} "
+  export PS1="${PYTHON_VIRTUALENV}${YELLOW}\t${COLOR_NONE}:${RED}[\W]${COLOR_NONE}$(__git_ps1)${PROMPT_SYMBOL} "
+}
+
+# Tell bash to execute this function just before displaying its prompt.
+PROMPT_COMMAND=set_bash_prompt
+
+# User specific aliases and functions
+alias namealias='/file/script.sh'
+alias namealias='/file/script.sh'
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin

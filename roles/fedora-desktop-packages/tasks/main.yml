@@ -1,0 +1,159 @@
+- block:
+  - name: ARDUINO, RASPBERRY TOOLS
+    dnf:
+      name:
+        - arduino
+        - fritzing
+        - arm-image-installer
+      state: latest
+
+  - name: PROGRAMMING LANGUAGES AND FRAMEWORKS
+    dnf:
+      name:
+        - glade
+        - php-cli
+        - java
+        - golang
+        - gd
+        - hugo
+        - yarn
+        - nodejs
+      state: latest
+
+  - name: GRAPHICS DESIGN
+    dnf:
+      name: 
+        - gimp
+        - inkscape
+        - inkscape-psd
+        - inkscape-view
+        - blender
+        - dia
+        - dia-CMOS
+        - dia-Digital
+        - dia-electric2
+        - dia-electronic
+        - dia-gnomeDIAicons
+        - dia-optics
+        - google-noto-sans-mono-fonts
+      state: latest
+
+  - name: WEB BROWSERS
+    dnf:
+      name:
+      - firefox
+      - chromium-freeworld
+      - elinks
+      - thunderbird
+      state: latest
+
+  - name: GOOGLE CHROME
+    dnf:
+      name: google-chrome-stable
+      enablerepo: google-chrome 
+      state: latest
+
+  - name: SSH SERVER
+    dnf:
+      name:
+        - openssh-askpass
+        - openssh-clients
+        - openssh-server
+        - openssh
+        - sshpass
+        - mosh
+        - putty
+      state: latest
+
+  - name: KVM VIRTUALIZATION
+    dnf:
+      name: "@virtualization"
+      state: latest
+
+  - name: VIRTUALIZATION TOOLS
+    dnf:
+      name:
+        - virt-install
+        - virt-manager
+        - virt-viewer
+        - virt-what
+        - bridge-utils
+        - VirtualBox
+      state: latest
+
+  - name: DATABASE TOOLS
+    dnf:
+      name: 
+        - mycli
+        - sqlitebrowser
+      state: latest
+
+  - name: VSCODE
+    dnf:
+      name: code
+      state: latest
+
+  - name: DOCKER CE
+    dnf:
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+      state: latest
+
+  - name: GET KERNEL NAME
+    shell: uname -s
+    register: kernel_name_output
+
+  - debug: msg="{{ kernel_name_output.stdout }}"
+
+  - name: GET HARDWARE MACHINE
+    shell: uname -m
+    register: kernel_machine_output
+
+  - debug: msg="{{ kernel_machine_output.stdout }}"
+
+  - name: DOCKER COMPOSE
+    get_url:
+      url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
+      dest: /usr/local/bin/docker-compose 
+      mode: "0755"
+
+  - name: ENABLE DOCKER DAEMON
+    systemd:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: ENABLE SSH DAEMON
+    systemd:
+      name: sshd
+      state: started
+      enabled: yes
+
+  - name: ADD USER ON GROUPS
+    user:
+      name: "{{ fedora_user }}"
+      #shell: /bin/bash
+      groups: vboxusers,qemu,libvirt,docker
+      append: yes
+
+  - name: CREATE FILE TERMINATOR
+    file:
+      path: /home/{{ fedora_user }}/.config/terminator
+      state: directory
+      mode: "0775"
+      owner: "{{ fedora_user }}"
+      group: "{{ fedora_user }}"
+      recurse: yes
+
+  - name: ADD CONFIG FILE FOR TERMINATOR
+    template:
+      src: terminator-config
+      dest: /home/{{ fedora_user }}/.config/terminator/config
+      owner: "{{ fedora_user }}"
+      group: "{{ fedora_user }}"
+      mode: "0664"
+
+#  - name: ADD ON GROUP DOCKER
+#    shell: usermod -a -G docker {{ fedora_user }}

@@ -1,0 +1,28 @@
+[global_config]
+  tab_position = bottom
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.87
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Noto Sans Mono 10
+    foreground_color = "#0ba357"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+      profile = None
+      size = 960, 1030
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

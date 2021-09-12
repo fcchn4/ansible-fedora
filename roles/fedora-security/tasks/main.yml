@@ -1,0 +1,50 @@
+- block:
+  - name: SECURITY TOOLS
+    dnf:
+      name: 
+        - mediainfo
+        - mediainfo-gui
+        - pdfmod
+        - httpd-tools
+        - httrack
+        - linkchecker
+        - ghex
+        - testssl
+        - perl-Image-ExifTool
+      state: latest
+
+  - name: SCAN PACKAGES
+    dnf:
+      name:
+        - whois
+        - telnet
+        - nmap 
+      state: latest
+
+  - name: GROUP SECURITY LAB
+    dnf: 
+      name: "@Security Lab"
+      state: latest
+
+  - name: REMOVE ICONS AND SERVICES
+    dnf:
+      name:
+        - httpd
+        - security-menus
+      state: absent
+      autoremove: yes
+
+  - name: TOR TOOLS
+    dnf:
+      name: 
+        - torbrowser-launcher
+        - torsocks
+        - tor
+      state: latest
+
+  - name: ADD USER ON GROUPS
+    user:
+      name: "{{ fedora_user }}"
+      #shell: /bin/bash
+      groups: tcpdump,wireshark
+      append: yes

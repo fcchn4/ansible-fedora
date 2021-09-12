@@ -1,0 +1,143 @@
+- block:
+  - name: DRIVERS VIDEO INTEL
+    dnf:
+      name:
+        - iucode-tool
+        - libva-intel-driver 
+        - xorg-x11-drv-intel 
+        - mesa-dri-drivers 
+        - mesa-libGLU
+        - intltool
+      state: latest
+
+  - name: TOOLS COMPRESS AND UNCOMPRESS
+    dnf:
+      name:
+        - unrar
+        - p7zip
+        - p7zip-plugins
+        - unzip
+      state: latest
+
+  - name: BASICS PACKAGES
+    dnf:
+      name:
+        - pwgen
+        - rdesktop
+        - hexchat
+        - axel
+        - android-tools
+        - zsh
+        - smartmontools
+        - dkms
+        - python3-virtualenv
+        - vinagre
+        - peek
+        - fdupes
+        - figlet
+        - sl
+        - transmission
+        - terminator
+        - lightdm-gtk-greeter-settings
+        - redhat-lsb-core
+        - vim-enhanced 
+        - curl
+        - wget
+        - git
+        - translate-shell
+        - gitg
+        - nfs-utils
+        - ntfs-3g
+        - ntfsprogs
+        - parted
+        - gdisk
+        - gparted
+        - gpart
+        - exfat-utils
+        - fuse-exfat
+        - htop
+        - gnome-system-monitor
+        - brasero
+        - pv
+        - speedtest-cli
+        - iotop
+        - itop
+        - keepassxc
+        - lua
+        - telegram-desktop
+        - tmux
+        - gqrx
+      state: latest
+
+  - name: AUDIO TOOLS
+    dnf:
+      name:
+        - gstreamer1-plugins-base
+        - gstreamer1-plugin-openh264
+        - gstreamer1-libav
+        - gstreamer1-plugins-good
+        - gstreamer1-libav
+        - gstreamer1-plugins-bad-free
+        - gstreamer1-plugins-bad-freeworld
+        - gstreamer1-plugins-bad-free-extras
+        - gstreamer1-plugins-good-extras
+        - gstreamer1-plugins-ugly
+        - gstreamer1-plugins-ugly-free
+        - gstreamer1-libav
+        - gstreamer1-plugins-good-gtk
+        - gstreamer1-plugins-good-qt
+        - ffmpeg
+        - caca-utils
+        - gstreamer1
+        - faac
+        - faad2
+        - alsa-lib
+        - alsa-plugins-pulseaudio
+        - alsa-utils
+        - youtube-dl
+        - vlc
+        - soundconverter
+      state: latest
+
+  - name: PRINTERS TOOLS
+    dnf:
+      name:
+        - cups
+        - cups-client
+        - cups-libs
+        - cups-pdf
+        - hplip
+        - hplip-libs
+      state: latest
+  
+  - name: SENSORS DRIVERS
+    dnf:
+      name:
+        - lm_sensors 
+        - tuned 
+        - tuned-utils 
+        - tuned-gtk
+      state: latest
+
+  - name: SOFTWARE BATERRY
+    dnf:
+      name:
+        - acpi
+        - acpid
+        - acpitool
+      state: latest
+
+  - name: ENABLE DAEMON TUNED
+    systemd:
+      name: tuned
+      state: started
+      enabled: yes
+
+  - name: ENABLE DAEMON ACPI
+    systemd: 
+      name: acpid
+      state: started
+      enabled: yes
+
+  - name: DETECT AUTOMATIC SENSORS
+    shell: sensors-detect --auto

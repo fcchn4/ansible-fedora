@@ -1,0 +1,9 @@
+all:
+  children:
+    fedora:
+      hosts:
+        fc34:
+          ansible_host: "{{ fedora_host }}"
+          ansible_user: "{{ fedora_user }}"
+          ansible_private_key_file: "{{ fedora_private_key_file }}"
+          ansible_port: "{{ fedora_port }}"
