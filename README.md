@@ -4,48 +4,24 @@ This repository contains a list of packages for Fedora, Debian, and Ubuntu distr
 
 ## List
 
-1. [Debian Packages](ansible-debian/debian-software.md) -> [Ansible Debian](ansible-debian/)
-2. [Fedora Packages](ansible-fedora/fedora-software.md) -> [Ansible Fedora](ansible-fedora/)
-3. [Ubuntu Packages](ansible-ubuntu/ubuntu-software.md) -> [Ansible Ubuntu](ansible-ubuntu)
+- [Fedora Packages](fedora-software.md)
 
-## Versions 
-
-1. **Debian 10**
-2. **Fedora 34**
-3. **Ubuntu 20.04**
-
-## Required Packages
-
-```bash
-$ sudo apt install ansible 
-```
+## Fedora 34
 
 ## Packages Extra no Included
 
-- [Zoom](https://zoom.us/download#client_4meeting)
-- [Slack](https://slack.com/intl/en-bo/downloads/linux)
-- [Brave](https://brave.com/download/)
-- [AWS Cli](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install)
-- [AWLess](https://github.com/wallix/awless/releases)
-- [Helm](https://helm.sh/docs/intro/install/)
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- [Terraform](https://www.terraform.io/downloads.html)
-- [Packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
+- [zoom](https://zoom.us/download#client_4meeting)
+- [slack](https://slack.com/intl/en-bo/downloads/linux)
+- [brave](https://brave.com/download/)
+- [aws](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install)
+- [awless](https://github.com/wallix/awless/releases)
+- [helm](https://helm.sh/docs/intro/install/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [terraform](https://www.terraform.io/downloads.html)
+- [packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
+- [assume-role](https://github.com/remind101/assume-role)
 
 ## List of Repositories
-
-### Debian
-
-- Debian Official
-- DEB Multimedia
-- MariaDB
-- VirtualBox
-- Docker CE
-- Typora
-- VSCode
-- NodeJS
-- Yarn
-- Postgresql
 
 ### Fedora
 
@@ -58,16 +34,69 @@ $ sudo apt install ansible
 - Terraform
 - Kubectl
 
-### Ubuntu
+## Pre-Requisites
 
-- Ubuntu Official
-- MariaDB
-- VirtualBox
-- Docker CE
-- Typora
-- VSCode
-- NodeJS
-- Yarn
-- Terraform
-- Postgresql
-- Kubectl
+First we must manually execute the following commands on the computer where the installation will take place:
+
+```bash
+$ sudo systemctl enable --now sshd.service
+```
+
+Then we must copy a public SSH key on the computer where the installations will be executed:
+
+```bash
+$ ssh-copy-id -o PubkeyAuthentication=no -i ~/.ssh/demo-ssh.pub user_name@ip_address_or_localhost
+```
+
+This ansible poroject is for automatic install on post-installation for Fedora Operating System.
+
+## Config Files and replace values
+
+The project have three playbooks:
+
+- fedora-base-repos.yml
+- fedora-desktop.yml
+- fedora-security.yml
+
+## Versions
+
+- Ansible: 2.9
+- Fedora: 34
+- XFCE: 4.16.0
+
+## Commands
+
+First we are located on the route:
+
+```bash
+$ cd ansible-fedora
+```
+
+Execution order:
+
+1. **fedora-base-repos.yml**:
+
+```bash
+$ ansible-playbook fedora-base-repos.yml \
+--ask-become-pass \
+-i inventory/inventory.yml \
+-e "ansible_python_interpreter=/usr/bin/python3"
+```
+
+2. **fedora-desktop.yml**:
+
+```bash
+$ ansible-playbook fedora-desktop.yml \
+--ask-become-pass \
+-i inventory/inventory.yml \
+-e "ansible_python_interpreter=/usr/bin/python3"
+```
+
+3. **fedora-security.yml**:
+
+```bash
+$ ansible-playbook fedora-security.yml \
+--ask-become-pass \
+-i inventory/inventory.yml \
+-e "ansible_python_interpreter=/usr/bin/python3"
+```
