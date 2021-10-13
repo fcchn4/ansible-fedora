@@ -36,6 +36,7 @@
         - fdupes
         - figlet
         - sl
+        - ranger
         - transmission
         - terminator
         - lightdm-gtk-greeter-settings
