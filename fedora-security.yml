@@ -9,3 +9,4 @@
     fedora_host: XXX.YYY.ZZZ.VVV    # IP Address or localhost
     fedora_private_key_file: ~/.ssh/demo-ssh
     fedora_port: 22
+    ansible_python_interpreter: /usr/bin/python3

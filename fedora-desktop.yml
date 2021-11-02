@@ -12,4 +12,4 @@
     fedora_port: 22
     kernel_name: Linux          # $(uname -s)
     hardware_machine: x86_64    # $(uname -m)
- 
+    ansible_python_interpreter: /usr/bin/python3

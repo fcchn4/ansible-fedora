@@ -79,8 +79,7 @@ Execution order:
 ```bash
 $ ansible-playbook fedora-base-repos.yml \
 --ask-become-pass \
--i inventory/inventory.yml \
--e "ansible_python_interpreter=/usr/bin/python3"
+-i inventory/inventory.yml
 ```
 
 2. **fedora-desktop.yml**:
