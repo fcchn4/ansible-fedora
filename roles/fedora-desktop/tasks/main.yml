@@ -141,3 +141,11 @@
 
   - name: DETECT AUTOMATIC SENSORS
     shell: sensors-detect --auto
+
+  - name: TYPORA FILE
+    template:
+      src: typora.desktop
+      dest: /usr/share/applications/typora.desktop
+      owner: root
+      group: root
+      mode: "0644"
