@@ -68,7 +68,9 @@
         
   - name: INSTALL USEFUL PACKAGES
     dnf:
-      name: fedora-packager
+      name: 
+        - fedora-packager
+        - ulauncher
       state: latest
 
   - name: UNINSTALL DEFAULT PACKAGES
@@ -80,7 +82,8 @@
         - claws-mail
         - asunder
         - parole
-        - pragha      
+        - pragha
+        - gnumeric   
       state: absent
 
   - name: EXECUTE AUTOREMOVE COMMAND
