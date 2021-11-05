@@ -74,6 +74,12 @@
         - xfce4-cpufreq-plugin
         - xfce4-cpugraph-plugin
         - xfce4-sensors-plugin
+        - elementary-xfce-icon-theme
+        - greybird-metacity-theme
+        - xfce4-settings
+        - f34-backgrounds-xfce
+        - f34-backgrounds-xfce4
+        - hunspell
       state: latest
 
   - name: UNINSTALL DEFAULT PACKAGES
@@ -86,7 +92,7 @@
         - asunder
         - parole
         - pragha
-        - gnumeric   
+        - gnumeric
       state: absent
 
   - name: EXECUTE AUTOREMOVE COMMAND
