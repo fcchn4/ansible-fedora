@@ -71,6 +71,9 @@
       name: 
         - fedora-packager
         - ulauncher
+        - xfce4-cpufreq-plugin
+        - xfce4-cpugraph-plugin
+        - xfce4-sensors-plugin
       state: latest
 
   - name: UNINSTALL DEFAULT PACKAGES

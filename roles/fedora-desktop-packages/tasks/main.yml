@@ -38,12 +38,12 @@
         - google-noto-sans-mono-fonts
       state: latest
 
-  - name: WEB BROWSERS
+  - name: WEB TOOLS
     dnf:
       name:
       - firefox
-      - chromium-freeworld
       - elinks
+      - w3m
       - thunderbird
       state: latest
 

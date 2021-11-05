@@ -11,6 +11,7 @@
         - ghex
         - testssl
         - perl-Image-ExifTool
+        - fping
       state: latest
 
   - name: SCAN PACKAGES
