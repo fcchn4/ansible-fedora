@@ -52,6 +52,7 @@
         - parted
         - gdisk
         - gparted
+        - gnome-disk-utility
         - gpart
         - exfat-utils
         - fuse-exfat
