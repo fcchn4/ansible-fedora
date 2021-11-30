@@ -20,6 +20,7 @@ This repository contains a list of packages for Fedora, Debian, and Ubuntu distr
 - [terraform](https://www.terraform.io/downloads.html)
 - [packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
 - [assume-role](https://github.com/remind101/assume-role)
+- [doctl](https://github.com/digitalocean/doctl)
 
 ## List of Repositories
 

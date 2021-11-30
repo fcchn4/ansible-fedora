@@ -68,6 +68,7 @@
         - telegram-desktop
         - tmux
         - gqrx
+        - doctl
       state: latest
 
   - name: AUDIO TOOLS
