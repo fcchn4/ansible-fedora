@@ -121,13 +121,13 @@
         - tuned-gtk
       state: latest
 
-  - name: SOFTWARE BATERRY
-    dnf:
-      name:
-        - acpi
-        - acpid
-        - acpitool
-      state: latest
+#  - name: SOFTWARE BATERRY
+#    dnf:
+#      name:
+#        #- acpi
+#        #- acpid
+#        #- acpitool
+#      state: latest
 
   - name: ENABLE DAEMON TUNED
     systemd:
@@ -135,11 +135,11 @@
       state: started
       enabled: yes
 
-  - name: ENABLE DAEMON ACPI
-    systemd: 
-      name: acpid
-      state: started
-      enabled: yes
+#  - name: ENABLE DAEMON ACPI
+#    systemd: 
+#      name: acpid
+#      state: started
+#      enabled: yes
 
   - name: DETECT AUTOMATIC SENSORS
     shell: sensors-detect --auto

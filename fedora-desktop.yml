@@ -5,11 +5,13 @@
     - fedora-desktop
     - fedora-desktop-packages
   vars:
-    fedora_version: 34
-    fedora_user: user_name
-    fedora_host: XXX.YYY.ZZZ.VVV    # IP Address or localhost
-    fedora_private_key_file: ~/.ssh/demo-ssh
+    fedora_version: 35
+    fedora_user: FEDORA_USER
+    fedora_host: IP_OR_DOMAIN
+    fedora_private_key_file: ~/.ssh/SSH_PRIV_KEY
     fedora_port: 22
-    kernel_name: Linux          # $(uname -s)
-    hardware_machine: x86_64    # $(uname -m)
+    docker_compose_version: v2.5.0
     ansible_python_interpreter: /usr/bin/python3
+
+    #kernel_name: Linux          # $(uname -s)
+    #hardware_machine: x86_64    # $(uname -m)

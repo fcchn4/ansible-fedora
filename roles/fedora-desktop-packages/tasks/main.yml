@@ -2,7 +2,7 @@
   - name: ARDUINO, RASPBERRY TOOLS
     dnf:
       name:
-        - arduino
+#        - arduino
         - fritzing
         - arm-image-installer
       state: latest
@@ -115,7 +115,7 @@
 
   - name: DOCKER COMPOSE
     get_url:
-      url: https://github.com/docker/compose/releases/download/1.29.2/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
+      url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
       dest: /usr/local/bin/docker-compose 
       mode: "0755"
 

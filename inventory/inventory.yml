@@ -1,6 +1,6 @@
 all:
   hosts:
-    fc34:
+    fedora:
       ansible_host: "{{ fedora_host }}"
   
   vars:
