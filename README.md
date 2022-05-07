@@ -55,7 +55,7 @@ This ansible poroject is for automatic install on post-installation for Fedora O
 
 The project have three playbooks:
 
-- fedora-base-repos.yml
+- fedora-base.yml
 - fedora-desktop.yml
 - fedora-security.yml
 
@@ -75,10 +75,10 @@ $ cd ansible-fedora
 
 Execution order:
 
-1. **fedora-base-repos.yml**:
+1. **fedora-base.yml**:
 
 ```bash
-$ ansible-playbook fedora-base-repos.yml \
+$ ansible-playbook fedora-base.yml \
 --ask-become-pass \
 -i inventory/inventory.yml
 ```

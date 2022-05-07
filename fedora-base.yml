@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: True
+  roles: 
+    - fedora-base
+  vars:
+    fedora_version: 35
+    fedora_user: FEDORA_USER
+    fedora_host: IP_OR_DOMAIN
+    fedora_private_key_file: ~/.ssh/SSH_PRIV_KEY
+    fedora_port: 22
+    ansible_python_interpreter: /usr/bin/python3

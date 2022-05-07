@@ -1,9 +1,9 @@
 - block:
   - name: INSTALL RPM FUSION REPOS
     dnf:
-      name: 
-        - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
-        - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
+      name:
+        - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
+        - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
       state: present
     #vars:
     #  fedora_version: 34
@@ -77,8 +77,7 @@
         - elementary-xfce-icon-theme
         - greybird-metacity-theme
         - xfce4-settings
-        - f34-backgrounds-xfce
-        - f34-backgrounds-xfce4
+        - f{{ fedora_version }}-backgrounds-xfce
         - hunspell
       state: latest
 
