@@ -22,6 +22,9 @@
   - name: BASICS PACKAGES
     dnf:
       name:
+        - jq
+        - inxi
+        - lshw
         - pwgen
         - rdesktop
         - hexchat
@@ -69,6 +72,7 @@
         - tmux
         - gqrx
         - doctl
+        - oxygen-cursor-themes
       state: latest
 
   - name: AUDIO TOOLS
@@ -294,6 +298,12 @@
 #      name: acpid
 #      state: started
 #      enabled: yes
+
+  - name: ENABLE DAEMON DOCKER
+    systemd:
+      name: docker
+      state: started
+      enabled: yes
 
   - name: DETECT AUTOMATIC SENSORS
     shell: sensors-detect --auto

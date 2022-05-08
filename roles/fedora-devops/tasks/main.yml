@@ -43,6 +43,20 @@
         - tor
       state: latest
 
+  - name: HASHICORP AND K8S
+    dnf:
+      name:
+        - terraform
+        - packer
+        - vagrant
+        - kubectl
+      state: latest
+
+  - name: ANSIBLE
+    dnf:
+      name: ansible
+      state: latest
+
   - name: ADD USER ON GROUPS
     user:
       name: "{{ fedora_user }}"

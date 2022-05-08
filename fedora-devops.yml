@@ -2,7 +2,7 @@
 - hosts: all
   become: True
   roles: 
-    - fedora-security
+    - fedora-devops
   vars: 
     fedora_version: 35
     fedora_user: FEDORA_USER
