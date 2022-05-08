@@ -3,7 +3,6 @@
   become: True
   roles:
     - fedora-desktop
-    - fedora-desktop-packages
   vars:
     fedora_version: 35
     fedora_user: FEDORA_USER
