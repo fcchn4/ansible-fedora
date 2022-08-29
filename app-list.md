@@ -1,4 +1,4 @@
-# Fedora 34 - XFCE Desktop Post Install 
+# FEDORA 36 - XFCE DESKTOP
 
 ## Repositories for Personal Desktop
 

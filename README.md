@@ -1,39 +1,61 @@
-# Ansible Install Linux
+# ANSIBLE INSTALL
 
-This repository contains a list of packages for Fedora, Debian, and Ubuntu distributions. It only contains a long list of packages for some GNU/Linux distributions.
+This repository contains a list of packages for the Fedora distribution. Contains a list of packages with repositories, desktop packages, and devops tools.
 
 ## List
 
-- [Fedora Packages](fedora-software.md)
+- [Fedora Packages](app-list.md)
 
-## Fedora 34
+## Fedora
 
-## Packages Extra no Included
+- Fedora Offcial
+- RPM Fusion
+
+## Desktop Apps Extras
 
 - [zoom](https://zoom.us/download#client_4meeting)
 - [slack](https://slack.com/intl/en-bo/downloads/linux)
 - [brave](https://brave.com/download/)
-- [aws](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install)
-- [awless](https://github.com/wallix/awless/releases)
+- [vscode](https://code.visualstudio.com/)
+
+## JS
+
+- [nodejs](https://github.com/nodesource/distributions/blob/master/README.md)
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/#centos-stable)
+
+## Containers
+
+- [docker-ce](https://docs.docker.com/engine/install/fedora/)
 - [helm](https://helm.sh/docs/intro/install/)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [docker-compose](https://github.com/docker/compose/releases)
+
+## Cloud
+
+- [aws](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html#cliv2-linux-install)
+- [awless](https://github.com/wallix/awless/releases)
 - [terraform](https://www.terraform.io/downloads.html)
 - [packer](https://learn.hashicorp.com/tutorials/packer/get-started-install-cli)
 - [assume-role](https://github.com/remind101/assume-role)
 - [doctl](https://github.com/digitalocean/doctl)
+- [terragrunt](https://github.com/gruntwork-io/terragrunt/releases)
+- [gomplate](https://github.com/hairyhenderson/gomplate/releases)
+- [hugo](https://github.com/gohugoio/hugo/releases)
+- [opa](https://github.com/open-policy-agent/opa/releases)
+- [popeye](https://github.com/derailed/popeye/releases)
+- [sops](https://github.com/mozilla/sops/releases)
+- [terraform-docs](https://github.com/terraform-docs/terraform-docs/releases)
+- [terrascan](https://github.com/tenable/terrascan/releases)
+- [tflint](https://github.com/terraform-linters/tflint/releases)
+- [tfsec](https://github.com/aquasecurity/tfsec/releases)
+
+## Data Bases
+
+- [postgresql](https://www.postgresql.org/download/linux/redhat/)
+- [mariadb](https://mariadb.org/download/?t=repo-config&d=Fedora+36+%28x86_64%29)
+- [mysql](https://dev.mysql.com/downloads/repo/yum/)
 
 ## List of Repositories
-
-### Fedora
-
-- Fedora Offcial
-- RPM Fusion
-- VSCode
-- Docker CE
-- Yarn
-- Postgresql
-- Terraform
-- Kubectl
 
 ## Pre-Requisites
 
