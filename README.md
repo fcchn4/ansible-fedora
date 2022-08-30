@@ -17,6 +17,7 @@ This repository contains a list of packages for the Fedora distribution. Contain
 - [slack](https://slack.com/intl/en-bo/downloads/linux)
 - [brave](https://brave.com/download/)
 - [vscode](https://code.visualstudio.com/)
+- [openvpn v3](https://community.openvpn.net/openvpn/wiki/OpenVPN3Linux)
 
 ## JS
 
