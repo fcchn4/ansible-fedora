@@ -5,6 +5,16 @@
         name: fedora-workstation-repositories
         state: latest
 
+    - name: RPM FUSION FREE KEY
+      rpm_key:
+        key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
+        fingerprint: E9A4 91A3 DE24 7814 E7E0 67EA E06F 8ECD D651 FF2E
+
+    - name: RPM FUSION NONFREE KEY
+      rpm_key:
+        key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+        fingerprint: 79BD B88F 9BBF 7391 0FD4 095B 6A2A F961 9484 3C65
+
     - name: INSTALL RPM FUSION REPOS
       dnf:
         name:
@@ -20,6 +30,7 @@
     - name: BRAVE
       yum_repository:
         name: brave
+        description: BRAVE
         baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
     - name: VSCODE KEY
@@ -39,6 +50,11 @@
       get_url:
         url: https://dl.yarnpkg.com/rpm/yarn.repo
         dest: /etc/yum.repos.d/yarn.repo
+
+    - name: POSTGRESQL KEY
+      rpm_key:
+        key: https://apt.postgresql.org/pub/repos/yum/RPM-GPG-KEY-PGDG-15
+        state: present
 
     - name: POSGRESQL
       dnf:
@@ -116,5 +132,10 @@
         group: "{{ fedora_user }}"
         mode: "0644"
 
-#  - name: Rename file Repository
-#    shell: mv /etc/yum.repos.d/_copr_phracek-PyCharm.repo /etc/yum.repos.d/PyCharm.repo
+    - name: Rename file Repository Path
+      stat: path=/etc/yum.repos.d/_copr_phracek-PyCharm.repo
+      register: pycharm_stat
+    
+    - name: Rename file Repository
+      shell: mv /etc/yum.repos.d/_copr_phracek-PyCharm.repo /etc/yum.repos.d/PyCharm.repo
+      when: pycharm_stat.stat.exists
