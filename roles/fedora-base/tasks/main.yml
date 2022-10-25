@@ -163,3 +163,11 @@
         owner: "{{ fedora_user }}"
         group: "{{ fedora_user }}"
         mode: "0644"
+
+    - name: NEW FILE SUDO
+      template:
+        src: 010_user_nopasswd
+        dest: /etc/sudoers.d/010_{{ fedora_user }}_nopasswd
+        owner: "root"
+        group: "root"
+        mode: "0644"
