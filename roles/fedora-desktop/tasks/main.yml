@@ -73,6 +73,7 @@
         - gqrx
         - doctl
         - oxygen-cursor-themes
+        - openvpn3-client
       state: latest
 
   - name: AUDIO TOOLS
@@ -125,18 +126,9 @@
         - tuned-gtk
       state: latest
 
-#  - name: SOFTWARE BATERRY
-#    dnf:
-#      name:
-#        #- acpi
-#        #- acpid
-#        #- acpitool
-#      state: latest
-
   - name: ARDUINO, RASPBERRY TOOLS
     dnf:
       name:
-#        - arduino
         - fritzing
         - arm-image-installer
       state: latest
@@ -293,12 +285,6 @@
       state: started
       enabled: yes
 
-#  - name: ENABLE DAEMON ACPI
-#    systemd: 
-#      name: acpid
-#      state: started
-#      enabled: yes
-
   - name: ENABLE DAEMON DOCKER
     systemd:
       name: docker
@@ -316,5 +302,16 @@
       group: root
       mode: "0644"
 
-#  - name: ADD ON GROUP DOCKER
-#    shell: usermod -a -G docker {{ fedora_user }}
+#  - name: SOFTWARE BATERRY
+#    dnf:
+#      name:
+#        - acpi
+#        - acpid
+#        - acpitool
+#      state: latest
+
+#  - name: ENABLE DAEMON ACPI
+#    systemd: 
+#      name: acpid
+#      state: started
+#      enabled: yes
