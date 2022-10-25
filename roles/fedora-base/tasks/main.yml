@@ -10,7 +10,7 @@
         key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
         fingerprint: E9A4 91A3 DE24 7814 E7E0 67EA E06F 8ECD D651 FF2E
 
-    - name: RPM FUSION NONFREE KEY
+    - name: RPM FUSION NON-FREE KEY
       rpm_key:
         key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
         fingerprint: 79BD B88F 9BBF 7391 0FD4 095B 6A2A F961 9484 3C65
@@ -30,7 +30,7 @@
     - name: BRAVE
       yum_repository:
         name: brave
-        description: BRAVE
+        description: Brave
         baseurl: https://brave-browser-rpm-release.s3.brave.com/x86_64/
 
     - name: VSCODE KEY
@@ -69,6 +69,30 @@
 
     - name: KUBECTL REPO FILE
       shell: sh -c 'echo -e "[kubernetes]\nname=Kubernetes\nbaseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg" > /etc/yum.repos.d/kubectl.repo'
+
+    - name: OPENVPN COPR
+      dnf: enablerepo=dsommers/openvpn3
+
+    - name: Rename OpenVPN V2 file Repository Path
+      stat: path=/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:dsommers:openvpn3.repo
+      register: ovpnv2_stat
+    
+    - name: Rename Open VPN V2 file Repository
+      shell: mv /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:dsommers:openvpn3.repo /etc/yum.repos.d/openvpnv2.repo
+      when: ovpnv2_stat.stat.exists
+
+    - name: JFROG KEY
+      rpm_key:
+        key: https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key
+        state: present
+
+    - name: JFROG
+      template:
+        src: jfrog-cli.repo
+        dest: /etc/yum.repos.d/jfrog-cli.repo
+        owner: "root"
+        group: "root"
+        mode: "0644"
 
     ## Step for install and remove packages
     - name: UPGRADE ALL PACKAGES
