@@ -50,6 +50,8 @@
         - packer
         - vagrant
         - kubectl
+        - helm
+        - jfrog-cli
       state: latest
 
   - name: ANSIBLE
