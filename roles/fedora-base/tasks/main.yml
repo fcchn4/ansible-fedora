@@ -1,5 +1,5 @@
 - block:
-    ## Add Repositories
+    # Add Repositories
     - name: WORKSTATION REPOS
       dnf:
         name: fedora-workstation-repositories
@@ -94,7 +94,15 @@
         group: "root"
         mode: "0644"
 
-    ## Step for install and remove packages
+    - name: Rename file Repository Path
+      stat: path=/etc/yum.repos.d/_copr_phracek-PyCharm.repo
+      register: pycharm_stat
+    
+    - name: Rename file Repository
+      shell: mv /etc/yum.repos.d/_copr_phracek-PyCharm.repo /etc/yum.repos.d/PyCharm.repo
+      when: pycharm_stat.stat.exists
+
+    # Step for install and remove packages
     - name: UPGRADE ALL PACKAGES
       dnf:
         name: "*"
@@ -155,11 +163,3 @@
         owner: "{{ fedora_user }}"
         group: "{{ fedora_user }}"
         mode: "0644"
-
-    - name: Rename file Repository Path
-      stat: path=/etc/yum.repos.d/_copr_phracek-PyCharm.repo
-      register: pycharm_stat
-    
-    - name: Rename file Repository
-      shell: mv /etc/yum.repos.d/_copr_phracek-PyCharm.repo /etc/yum.repos.d/PyCharm.repo
-      when: pycharm_stat.stat.exists
