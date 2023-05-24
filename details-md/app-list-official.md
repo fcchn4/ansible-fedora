@@ -1,4 +1,4 @@
-# FEDORA 36 - XFCE DESKTOP
+# FEDORA XFCE DESKTOP
 
 ## Repositories for Personal Desktop
 
