@@ -73,14 +73,6 @@
     - name: OPENVPN COPR
       dnf: enablerepo=dsommers/openvpn3
 
-    - name: Rename OpenVPN V2 file Repository Path
-      stat: path=/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:dsommers:openvpn3.repo
-      register: ovpnv2_stat
-    
-    - name: Rename Open VPN V2 file Repository
-      shell: mv /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:dsommers:openvpn3.repo /etc/yum.repos.d/openvpnv2.repo
-      when: ovpnv2_stat.stat.exists
-
     - name: JFROG KEY
       rpm_key:
         key: https://releases.jfrog.io/artifactory/jfrog-gpg-public/jfrog_public_gpg.key
@@ -93,14 +85,6 @@
         owner: "root"
         group: "root"
         mode: "0644"
-
-    - name: Rename file Repository Path
-      stat: path=/etc/yum.repos.d/_copr_phracek-PyCharm.repo
-      register: pycharm_stat
-    
-    - name: Rename file Repository
-      shell: mv /etc/yum.repos.d/_copr_phracek-PyCharm.repo /etc/yum.repos.d/PyCharm.repo
-      when: pycharm_stat.stat.exists
 
     # Step for install and remove packages
     - name: UPGRADE ALL PACKAGES
