@@ -4,7 +4,7 @@
   roles: 
     - fedora-base
   vars:
-    fedora_version: 36
+    fedora_version: 38
     fedora_user: FEDORA_USER
     fedora_host: IP_OR_DOMAIN
     fedora_private_key_file: ~/.ssh/SSH_PRIV_KEY
