@@ -1,304 +1,303 @@
 - block:
-  - name: DRIVERS VIDEO INTEL
-    dnf:
-      name:
-        - iucode-tool
-        - libva-intel-driver 
-        - xorg-x11-drv-intel 
-        - mesa-dri-drivers 
-        - mesa-libGLU
-        - intltool
-      state: latest
+    - name: DRIVERS VIDEO INTEL
+      dnf:
+        name:
+          - iucode-tool
+          - libva-intel-driver
+          - xorg-x11-drv-intel
+          - mesa-dri-drivers
+          - mesa-libGLU
+          - intltool
+        state: latest
 
-  - name: TOOLS COMPRESS AND UNCOMPRESS
-    dnf:
-      name:
-        - unrar
-        - p7zip
-        - p7zip-plugins
-        - unzip
-      state: latest
+    - name: TOOLS COMPRESS AND UNCOMPRESS
+      dnf:
+        name:
+          - unrar
+          - p7zip
+          - p7zip-plugins
+          - unzip
+        state: latest
 
-  - name: BASICS PACKAGES
-    dnf:
-      name:
-        - jq
-        - inxi
-        - lshw
-        - pwgen
-        - rdesktop
-        - hexchat
-        - axel
-        - android-tools
-        - zsh
-        - smartmontools
-        - dkms
-        - python3-virtualenv
-        - vinagre
-        - peek
-        - fdupes
-        - figlet
-        - ranger
-        - transmission
-        - terminator
-        - lightdm-gtk-greeter-settings
-        - redhat-lsb-core
-        - vim-enhanced 
-        - curl
-        - wget
-        - git
-        - translate-shell
-        - gitg
-        - nfs-utils
-        - ntfs-3g
-        - ntfsprogs
-        - parted
-        - gdisk
-        - gparted
-        - gnome-disk-utility
-        - gpart
-        - exfat-utils
-        - fuse-exfat
-        - htop
-        - gnome-system-monitor
-        - brasero
-        - pv
-        - speedtest-cli
-        - iotop
-        - itop
-        - keepassxc
-        - lua
-        - telegram-desktop
-        - tmux
-        - gqrx
-        - doctl
-        - oxygen-cursor-themes
-        - openvpn3-client
-      state: latest
+    - name: BASICS PACKAGES
+      dnf:
+        name:
+          - jq
+          - inxi
+          - lshw
+          - pwgen
+          - rdesktop
+          - hexchat
+          - axel
+          - android-tools
+          - zsh
+          - smartmontools
+          - dkms
+          - python3-virtualenv
+          - vinagre
+          - peek
+          - fdupes
+          - figlet
+          - ranger
+          - transmission
+          - terminator
+          - lightdm-gtk-greeter-settings
+          - redhat-lsb-core
+          - vim-enhanced
+          - curl
+          - wget
+          - git
+          - translate-shell
+          - gitg
+          - nfs-utils
+          - ntfs-3g
+          - ntfsprogs
+          - parted
+          - gdisk
+          - gparted
+          - gnome-disk-utility
+          - gpart
+          - exfat-utils
+          - fuse-exfat
+          - htop
+          - gnome-system-monitor
+          - brasero
+          - pv
+          - speedtest-cli
+          - iotop
+          - itop
+          - keepassxc
+          - lua
+          - telegram-desktop
+          - tmux
+          - gqrx
+          - doctl
+          - oxygen-cursor-themes
+          - openvpn3-client
+          - flameshot
+        state: latest
 
-  - name: AUDIO TOOLS
-    dnf:
-      name:
-        - gstreamer1-plugins-base
-        - gstreamer1-plugin-openh264
-        - gstreamer1-libav
-        - gstreamer1-plugins-good
-        - gstreamer1-plugins-bad-free
-        - gstreamer1-plugins-bad-freeworld
-        - gstreamer1-plugins-bad-free-extras
-        - gstreamer1-plugins-good-extras
-        - gstreamer1-plugins-ugly
-        - gstreamer1-plugins-ugly-free
-        - gstreamer1-plugins-good-gtk
-        - gstreamer1-plugins-good-qt
-        - caca-utils
-        - gstreamer1
-        - faac
-        - faad2
-        - alsa-lib
-        - alsa-plugins-pulseaudio
-        - alsa-utils
-        - youtube-dl
-        - vlc
-        - soundconverter
-      state: latest
+    - name: AUDIO TOOLS
+      dnf:
+        name:
+          - gstreamer1-plugins-base
+          - gstreamer1-plugin-openh264
+          - gstreamer1-libav
+          - gstreamer1-plugins-good
+          - gstreamer1-plugins-bad-free
+          - gstreamer1-plugins-bad-freeworld
+          - gstreamer1-plugins-bad-free-extras
+          - gstreamer1-plugins-good-extras
+          - gstreamer1-plugins-ugly
+          - gstreamer1-plugins-ugly-free
+          - gstreamer1-plugins-good-gtk
+          - gstreamer1-plugins-good-qt
+          - caca-utils
+          - gstreamer1
+          - faac
+          - faad2
+          - alsa-lib
+          - alsa-plugins-pulseaudio
+          - alsa-utils
+          - youtube-dl
+          - vlc
+          - soundconverter
+        state: latest
 
-  - name: PRINTERS TOOLS
-    dnf:
-      name:
-        - cups
-        - cups-client
-        - cups-libs
-        - cups-pdf
-        - hplip
-        - hplip-libs
-      state: latest
-  
-  - name: SENSORS DRIVERS
-    dnf:
-      name:
-        - lm_sensors 
-        - tuned 
-        - tuned-utils 
-        - tuned-gtk
-      state: latest
+    - name: PRINTERS TOOLS
+      dnf:
+        name:
+          - cups
+          - cups-client
+          - cups-libs
+          - cups-pdf
+          - hplip
+          - hplip-libs
+        state: latest
 
-  - name: ARDUINO, RASPBERRY TOOLS
-    dnf:
-      name:
-        - fritzing
-        - arm-image-installer
-      state: latest
+    - name: SENSORS DRIVERS
+      dnf:
+        name:
+          - lm_sensors
+          - tuned
+          - tuned-utils
+          - tuned-gtk
+        state: latest
 
-  - name: PROGRAMMING LANGUAGES AND FRAMEWORKS
-    dnf:
-      name:
-        - glade
-        - php-cli
-        - java
-        - golang
-        - gd
-        - yarn
-        - nodejs
-      state: latest
+    - name: ARDUINO, RASPBERRY TOOLS
+      dnf:
+        name:
+          - fritzing
+          - arm-image-installer
+        state: latest
 
-  - name: GRAPHICS DESIGN
-    dnf:
-      name: 
-        - gimp
-        - inkscape
-        - inkscape-psd
-        - inkscape-view
-        - dia
-        - dia-CMOS
-        - dia-Digital
-        - dia-electric2
-        - dia-electronic
-        - dia-gnomeDIAicons
-        - dia-optics
-        - google-noto-sans-mono-fonts
-      state: latest
+    - name: PROGRAMMING LANGUAGES AND FRAMEWORKS
+      dnf:
+        name:
+          - glade
+          - php-cli
+          - java
+          - golang
+          - gd
+          - yarn
+          - nodejs
+        state: latest
 
-  - name: WEB TOOLS
-    dnf:
-      name:
-      - elinks
-      - w3m
-      - thunderbird
-      state: latest
+    - name: GRAPHICS DESIGN
+      dnf:
+        name:
+          - gimp
+          - inkscape
+          - inkscape-psd
+          - inkscape-view
+          - dia
+          - dia-CMOS
+          - dia-Digital
+          - dia-electric2
+          - dia-electronic
+          - dia-gnomeDIAicons
+          - dia-optics
+          - google-noto-sans-mono-fonts
+        state: latest
 
-  - name: GOOGLE CHROME
-    dnf:
-      name: google-chrome-stable
-      enablerepo: google-chrome 
-      state: latest
+    - name: WEB TOOLS
+      dnf:
+        name:
+          - elinks
+          - w3m
+          - thunderbird
+        state: latest
 
-  - name: SSH SERVER
-    dnf:
-      name:
-        - openssh-askpass
-        - openssh-clients
-        - openssh-server
-        - openssh
-        - sshpass
-        - mosh
-        - putty
-      state: latest
+    - name: GOOGLE CHROME
+      dnf:
+        name: google-chrome-stable
+        enablerepo: google-chrome
+        state: latest
 
-  - name: KVM VIRTUALIZATION
-    dnf:
-      name: "@virtualization"
-      state: latest
+    - name: SSH SERVER
+      dnf:
+        name:
+          - openssh-askpass
+          - openssh-clients
+          - openssh-server
+          - openssh
+          - sshpass
+          - mosh
+          - putty
+        state: latest
 
-  - name: VIRTUALIZATION TOOLS
-    dnf:
-      name:
-        - virt-install
-        - virt-manager
-        - virt-viewer
-        - virt-what
-        - bridge-utils
-        - VirtualBox
-      state: latest
+    - name: KVM VIRTUALIZATION
+      dnf:
+        name: "@virtualization"
+        state: latest
 
-  - name: DATABASE TOOLS
-    dnf:
-      name: 
-        - mycli
-        - sqlitebrowser
-      state: latest
+    - name: VIRTUALIZATION TOOLS
+      dnf:
+        name:
+          - virt-install
+          - virt-manager
+          - virt-viewer
+          - virt-what
+          - bridge-utils
+          - VirtualBox
+        state: latest
 
-  - name: VSCODE
-    dnf:
-      name: code
-      state: latest
+    - name: DATABASE TOOLS
+      dnf:
+        name:
+          - mycli
+          - sqlitebrowser
+        state: latest
 
-  - name: DOCKER CE
-    dnf:
-      name:
-        - docker-ce
-        - docker-ce-cli
-        - containerd.io
-      state: latest
+    - name: VSCODE
+      dnf:
+        name: code
+        state: latest
 
-  - name: GET KERNEL NAME
-    shell: uname -s
-    register: kernel_name_output
+    - name: DOCKER CE
+      dnf:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: latest
 
-  - debug: msg="{{ kernel_name_output.stdout }}"
+    - name: GET KERNEL NAME
+      shell: uname -s
+      register: kernel_name_output
 
-  - name: GET HARDWARE MACHINE
-    shell: uname -m
-    register: kernel_machine_output
+    - debug: msg="{{ kernel_name_output.stdout }}"
 
-  - debug: msg="{{ kernel_machine_output.stdout }}"
+    - name: GET HARDWARE MACHINE
+      shell: uname -m
+      register: kernel_machine_output
 
-  - name: DOCKER COMPOSE
-    get_url:
-      url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
-      dest: /usr/local/bin/docker-compose 
-      mode: "0755"
+    - debug: msg="{{ kernel_machine_output.stdout }}"
 
-  - name: ENABLE DOCKER DAEMON
-    systemd:
-      name: docker
-      state: started
-      enabled: yes
+    - name: DOCKER COMPOSE
+      get_url:
+        url: https://github.com/docker/compose/releases/download/{{ docker_compose_version }}/docker-compose-{{ kernel_name_output.stdout }}-{{ kernel_machine_output.stdout }}
+        dest: /usr/local/bin/docker-compose
+        mode: "0755"
 
-  - name: ENABLE SSH DAEMON
-    systemd:
-      name: sshd
-      state: started
-      enabled: yes
+    - name: ENABLE DOCKER DAEMON
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
 
-  - name: ADD USER ON GROUPS
-    user:
-      name: "{{ fedora_user }}"
-      #shell: /bin/bash
-      groups: vboxusers,qemu,libvirt,docker
-      append: yes
+    - name: ENABLE SSH DAEMON
+      systemd:
+        name: sshd
+        state: started
+        enabled: yes
 
-  - name: CREATE FILE TERMINATOR
-    file:
-      path: /home/{{ fedora_user }}/.config/terminator
-      state: directory
-      mode: "0775"
-      owner: "{{ fedora_user }}"
-      group: "{{ fedora_user }}"
-      recurse: yes
+    - name: ADD USER ON GROUPS
+      user:
+        name: "{{ fedora_user }}"
+        #shell: /bin/bash
+        groups: vboxusers,qemu,libvirt,docker
+        append: yes
 
-  - name: ADD CONFIG FILE FOR TERMINATOR
-    template:
-      src: terminator-config
-      dest: /home/{{ fedora_user }}/.config/terminator/config
-      owner: "{{ fedora_user }}"
-      group: "{{ fedora_user }}"
-      mode: "0664"
+    - name: CREATE FILE TERMINATOR
+      file:
+        path: /home/{{ fedora_user }}/.config/terminator
+        state: directory
+        mode: "0775"
+        owner: "{{ fedora_user }}"
+        group: "{{ fedora_user }}"
+        recurse: yes
 
+    - name: ADD CONFIG FILE FOR TERMINATOR
+      template:
+        src: terminator-config
+        dest: /home/{{ fedora_user }}/.config/terminator/config
+        owner: "{{ fedora_user }}"
+        group: "{{ fedora_user }}"
+        mode: "0664"
 
-  - name: ENABLE DAEMON TUNED
-    systemd:
-      name: tuned
-      state: started
-      enabled: yes
+    - name: ENABLE DAEMON TUNED
+      systemd:
+        name: tuned
+        state: started
+        enabled: yes
 
-  - name: ENABLE DAEMON DOCKER
-    systemd:
-      name: docker
-      state: started
-      enabled: yes
+    - name: ENABLE DAEMON DOCKER
+      systemd:
+        name: docker
+        state: started
+        enabled: yes
 
-  - name: DETECT AUTOMATIC SENSORS
-    shell: sensors-detect --auto
+    - name: DETECT AUTOMATIC SENSORS
+      shell: sensors-detect --auto
 
-  - name: TYPORA FILE
-    template:
-      src: typora.desktop
-      dest: /usr/share/applications/typora.desktop
-      owner: root
-      group: root
-      mode: "0644"
-
+    - name: TYPORA FILE
+      template:
+        src: typora.desktop
+        dest: /usr/share/applications/typora.desktop
+        owner: root
+        group: root
+        mode: "0644"
 #  - name: SOFTWARE BATERRY
 #    dnf:
 #      name:
@@ -308,7 +307,7 @@
 #      state: latest
 
 #  - name: ENABLE DAEMON ACPI
-#    systemd: 
+#    systemd:
 #      name: acpid
 #      state: started
 #      enabled: yes
