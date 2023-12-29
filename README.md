@@ -29,7 +29,7 @@ The project have three playbooks:
 ## Versions
 
 - Ansible: 2.10.8
-- Fedora: 38
+- Fedora: 39
 - XFCE: 4.18.0
 
 ## Commands
