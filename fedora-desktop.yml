@@ -4,13 +4,10 @@
   roles:
     - fedora-desktop
   vars:
-    fedora_version: 38
+    fedora_version: 39
     fedora_user: FEDORA_USER
     fedora_host: IP_OR_DOMAIN
     fedora_private_key_file: ~/.ssh/SSH_PRIV_KEY
     fedora_port: 22
     docker_compose_version: v2.18.1
     ansible_python_interpreter: /usr/bin/python3
-
-    #kernel_name: Linux          # $(uname -s)
-    #hardware_machine: x86_64    # $(uname -m)
