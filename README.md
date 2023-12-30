@@ -71,8 +71,8 @@ Exmaples flags for ansible command:
 
 - Fedora Offcial
 - RPM Fusion
-- [Fedora Packages](details-md/app-list.md)
+- [Fedora Packages](/details-md/app-list-official.md)
 
 ## Extra Packages
 
-- [List Extra Packages](details-md/app-list-extras.md)
+- [List Extra Packages](/details-md/app-list-extras.md)
