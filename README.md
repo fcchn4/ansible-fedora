@@ -28,7 +28,7 @@ The project have three playbooks:
 
 ## Versions
 
-- Ansible: 2.10.8
+- Ansible: 2.16.2
 - Fedora: 39
 - XFCE: 4.18.0
 
@@ -45,19 +45,26 @@ Execution order:
 1. **fedora-base.yml**:
 
 ```bash
-$ ansible-playbook fedora-base.yml --ask-become-pass -i inventory/inventory.yml
+$ ansible-playbook fedora-base.yml -i inventory/inventory.yml
 ```
 
 2. **fedora-desktop.yml**:
 
 ```bash
-$ ansible-playbook fedora-desktop.yml --ask-become-pass -i inventory/inventory.yml -e "ansible_python_interpreter=/usr/bin/python3"
+$ ansible-playbook fedora-desktop.yml -i inventory/inventory.yml
 ```
 
 3. **fedora-security.yml**:
 
 ```bash
-$ ansible-playbook fedora-security.yml --ask-become-pass -i inventory/inventory.yml -e "ansible_python_interpreter=/usr/bin/python3"
+$ ansible-playbook fedora-security.yml -i inventory/inventory.yml
+```
+
+Exmaples flags for ansible command:
+
+```bash
+--ask-become-pass # If you need sudo privileges, is necessary for fedora-base.yml
+-e "ansible_python_interpreter=/usr/bin/python3" # Specific Python version
 ```
 
 ## Fedora
