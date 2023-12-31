@@ -20,7 +20,7 @@
       type = Window
       parent = ""
       profile = None
-      size = 960, 1030
+      size = 1300, 1020
     [[[child1]]]
       type = Terminal
       parent = window0
