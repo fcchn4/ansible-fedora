@@ -73,8 +73,8 @@
           - gqrx
           - doctl
           - oxygen-cursor-themes
-          - openvpn3-client
           - flameshot
+          #- openvpn3-client
         state: latest
 
     - name: AUDIO TOOLS
@@ -163,7 +163,6 @@
     - name: WEB TOOLS
       dnf:
         name:
-          - elinks
           - w3m
           - thunderbird
         state: latest
@@ -194,10 +193,10 @@
     - name: VIRTUALIZATION TOOLS
       dnf:
         name:
-          - virt-install
-          - virt-manager
-          - virt-viewer
-          - virt-what
+          #- virt-install
+          #- virt-manager
+          #- virt-viewer
+          #- virt-what
           - bridge-utils
           - VirtualBox
         state: latest
@@ -220,6 +219,14 @@
           - docker-ce
           - docker-ce-cli
           - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: latest
+
+    - name: SOFTWARE BATERRY
+      dnf:
+        name:
+          - acpi
         state: latest
 
     - name: GET KERNEL NAME
@@ -298,16 +305,3 @@
         owner: root
         group: root
         mode: "0644"
-#  - name: SOFTWARE BATERRY
-#    dnf:
-#      name:
-#        - acpi
-#        - acpid
-#        - acpitool
-#      state: latest
-
-#  - name: ENABLE DAEMON ACPI
-#    systemd:
-#      name: acpid
-#      state: started
-#      enabled: yes
