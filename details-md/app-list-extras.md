@@ -19,6 +19,8 @@
 | Cloud              | [hugo](https://github.com/gohugoio/hugo/releases)                                                    | Install from RPM file    |
 | Cloud              | [sops](https://github.com/mozilla/sops/releases)                                                     | Install from RPM file    |
 | Cloud              | [snowsql](https://developers.snowflake.com/snowsql/)                                                 | Install from RPM file    |
+| Cloud              | [trivy](https://github.com/aquasecurity/trivy/releases)                                              | Install from RPM file    |
+| Cloud              | [serverless](https://github.com/serverless/serverless/releases)                                      | Install from binary file |
 | Cloud              | [terraform-docs](https://github.com/terraform-docs/terraform-docs/releases)                          | Install from binary file |
 | Cloud              | [terrascan](https://github.com/tenable/terrascan/releases)                                           | Install from binary file |
 | Cloud              | [tflint](https://github.com/terraform-linters/tflint/releases)                                       | Install from binary file |
