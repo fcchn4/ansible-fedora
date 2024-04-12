@@ -36,6 +36,7 @@
 | Cloud              | [velero](https://github.com/vmware-tanzu/velero/releases)                                            | Install from binary file |
 | Cloud              | [cntb-cli](https://github.com/contabo/cntb)                                                          | Install from binary file |
 | Cloud              | [qlik-cli](https://github.com/qlik-oss/qlik-cli/releases)                                            | Install from binary file |
+| Cloud              | [Regula](https://github.com/fugue/regula/releases/tag/v3.2.1)                                        | Install from binary file |
 | Data Bases         | [postgresql](https://www.postgresql.org/download/linux/redhat/)                                      | Ansible package list     |
 | Data Bases         | [mariadb](https://mariadb.org/download/?t=repo-config&d=Fedora+36+%28x86_64%29)                      | Ansible package list     |
 | Data Bases         | [mysql](https://dev.mysql.com/downloads/repo/yum/)                                                   | Ansible package list     |
